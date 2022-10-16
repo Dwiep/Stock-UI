@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="stylesheet" type="text/css" href="untitled.css"><!--css link -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+      <!-- icon link -->
+      <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  
+</head>
+
+<body onload="startTime()">
+
+ <!-- Side Navigation Bar  -->
+<div class="sidenav">
+  
+ <h2> LOGO</h2>
+ <br></br>
+  <a href="#"><i class="fa fa-pie-chart"></i></a> 
+  <a href="#"><i class="fa fa-line-chart"></i> </a> 
+  <a href="#"><i class="fas fa-wallet"></i> </a> 
+  <a href="#"><i class="fas fa-cog"></i></a>
+ 
+ 
+</div>
+
+
+
+   
+<div class="main">
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------> 
+<!---------------------------------------------------------TITLE BAR------------------------------------------------------------------------------------------> 
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------->  
+  
+  <div class="titleBar">
+     <!-- search box------------------------------------------------------------------------------------------------------------->
+      <i style="font-size: 20px; color: #cc99ff" class="fa fa-search"></i>
+      <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search for Stocks" title="Type in a category">
+        
+         <script>
+          function myFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("mySearch");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myMenu");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+              a = li[i].getElementsByTagName("a")[0];
+              if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+              } else {
+                li[i].style.display = "none";
+              }
+            }
+
+
+          }
+          </script>
+
+      <!--Notification Icon------------------------------------------------------------------------------------------------------------->
+      <i class="fas fa-bell"></i>
+
+      <!--user Icon------------------------------------------------------------------------------------------------------------->
+      <i style="float: right; font-size: 40px; color: #cc99ff; :hover: "class="fas fa-user-circle"></i>
+    </div> 
+
+      <div class="portfolio">
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------> 
+<!---------------------------------------------------------STOCK TABLE------------------------------------------------------------------------------------------> 
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------->   
+        <div class="portfolio-item tall">
+            <div class="start"> 
+            <table>
+                           <tr>
+                           <th>Stocks</th>
+                           <th>Action</th>
+                           <th>Result</th>
+                           </tr>
+                                                <tr>
+                                                  <td>Neo</td>
+                                                  <td>BUY</td>
+                                                  <td style="color: #66cc00">90.25% &uarr;</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Tesla</td>
+                                                  <td>SELL</td>
+                                                  <td style="color: red">52.30% &darr;</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Ripple</td>
+                                                  <td>BUY</td>
+                                                  <td style="color: #66cc00">22.64% &uarr;</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Alibaba</td>
+                                                  <td>BUY</td>
+                                                  <td style="color: #66cc00">98.16% &uarr;</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Virgin</td>
+                                                  <td>SELL</td>
+                                                  <td style="color: red">42.16% &darr;</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Oil</td>
+                                                  <td>BUY</td>
+                                                  <td style="color: #66cc00">93.16% &uarr;</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Gold</td>
+                                                  <td>BUY</td>
+                                                  <td style="color: #66cc00"> 51.98% &uarr;</td>
+                                                </tr>
+
+                                                 <tr>
+                                                  <td>Vodafone</td>
+                                                  <td>SELL</td>
+                                                  <td style="color: red" >24.46% &darr;</td>
+                                                </tr>
+                                                 <tr>
+                                                  <td>Vodafone</td>
+                                                  <td>BUY</td>
+                                                  <td style="color: #66cc00"> 29.43% &uarr;</td>
+                                                </tr> 
+                                                <tr>
+                                                  <td>Vodafone</td>
+                                                  <td>SELL</td>
+                                                  <td style="color: red">49.16% &darr;</td>
+                                                </tr>
+                                             
+                                           </table>
+                                           <button class="buttonx Backtesting" > Start Backtesting</button>
+                                           </div>
+                 
+        </div>
+
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------> 
+<!---------------------------------------------------------GRAPH------------------------------------------------------------------------------------------> 
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------->          
+        <div class="portfolio-item large two">
+            <div style="background-color: #1b1d98; " class="tradingview-widget-container">
+ 
+
+       
+
+                               
+                                    <div style="background-color: #1b1d98; padding:20px; width: 94%" id="tradingview_36903"></div>
+                                    <div  class="tradingview-widget-copyright">                                
+                                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                                    <script type="text/javascript">
+                                    new TradingView.widget(
+                                    {
+                                    "width": 690,
+                                    "height": 600,
+                                    "symbol": "NASDAQ:AAPL",
+                                    "interval": "D",
+                                    "timezone": "Etc/UTC",
+                                    "theme": "dark",
+                                    "style": "1",
+                                    "locale": "uk",
+                                    "toolbar_bg": "#f1f3f6",
+                                    "enable_publishing": false,
+                                    "allow_symbol_change": true,
+                                    "container_id": "tradingview_36903"
+                                  }
+                                    );
+                                    </script>
+                                  </div>
+                              </div>
+                                 
+        </div>
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------> 
+<!---------------------------------------------------------CALCULATOR------------------------------------------------------------------------------------------> 
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------->  
+
+
+
+        <div class="portfolio-item medium">
+          <div class="Calculator" style="background-color:#1b1d98;padding:15px;height:87%; color:#cc99ff">
+             <div class="btn-container">
+              
+
+              <button class="buttonx Sell">SELL</button>  
+              <button class="buttonx Buy">BUY</button>
+
+             </div>
+
+             
+              <br>
+              <form id="form">
+                <label for="investment" >Investment ($):</label><br>
+                <input type="number" id="investment" name="investment" placeholder="$" style="background-color:#6567e7;border: none;padding:3px; border-radius:5px">   <br><br>
+                <label for="Leverage">Leverage:</label><br>
+                <button class="button2">1:1</button>
+              <button class="button2 ">1:3</button>
+              <button class="button2 ">1:5</button>
+              <button class="button2 ">1:25</button>
+              <br><br>
+                <label for="Timeframe">Timeframe:</label><br>
+                <button class="button2">1M</button>
+              <button class="button2 ">5M</button>
+              <button class="button2 ">15M</button>
+              <button class="button2 ">1H</button>
+              <br><br>
+              <label for="profit">Take Profit:</label><br>
+                <input type="number" id="profit" name="profit" style="background-color:#6567e7;border: none;padding:3px;border-radius:5px">
+                <br><br>
+              <label for="loss">Stop Loss:</label><br>
+                <input type="number" id="loss" name="loss" style="background-color:#6567e7;border: none;padding:3px;border-radius:5px">
+                <br><br><br> 
+                
+              </form>
+                 <div class="btn-container">
+                <button class="calculate" >Auto Trade</button>
+                 </div>
+            </div> 
+        </div>
+
+
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------> 
+<!---------------------------------------------------------NEWS UPDATE------------------------------------------------------------------------------------------> 
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------->  
+
+
+
+
+        <div class="portfolio-item tallb"> 
+            <div class="news">
+                       <h3 style="font-size:18px;  ;text-align: center; background-color:#171984;padding:10px;  border-bottom: 2px solid #1b1d98;">NEWS UPDATES</h3>
+                    <table>
+                       
+                        <tr>
+                          <td style=" border-bottom: 1px solid #ddd">Tech Shares Lead Stock Gains; Treasuries Rise: Markets Wrap</td>
+
+                          <td style="color: red;border-bottom: 1px solid #ddd">High Impact</td>
+                        </tr>
+                        <tr>
+                          <td style=" border-bottom: 1px solid #ddd">Tech Shares Lead Stock Gains; Treasuries Rise: Markets Wrap</td>
+
+                          <td style="color: red;border-bottom: 1px solid #ddd">High Impact</td>
+                        </tr>
+                        <tr>
+                          <td style=" border-bottom: 1px solid #ddd">Tech Shares Lead Stock Gains; Treasuries Rise: Markets Wrap</td>
+
+                          <td style="color: Yellow;border-bottom: 1px solid #ddd">Low Impact</td>
+                        </tr>
+                        <tr>
+                          <td style=" border-bottom: 1px solid #ddd">Tech Shares Lead Stock Gains; Treasuries Rise: Markets Wrap</td>
+
+                          <td style="color: #66cc00;border-bottom: 1px solid #ddd">Mild Impact</td>
+                        </tr>
+                        <tr>
+                          <td style=" border-bottom: 1px solid #ddd">Tech Shares Lead Stock Gains; Treasuries Rise: Markets Wrap</td>
+
+                          <td style="color: #66cc00 ;border-bottom: 1px solid #ddd">Mild Impact</td>
+                        </tr>
+                        
+                     </table>
+                 </div>     
+        </div>
+
+
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------> 
+<!---------------------------------------------------------OPEN TRADE------------------------------------------------------------------------------------------> 
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------->          
+        <div class="portfolio-item largeb">
+          
+           <div class="opentread" >
+              <div style="background-color:#090979;color:white;font-size:25px;text-align: center;padding-bottom:10px "><B>Open Trade</B></div>
+
+              <div id="1" style="background-color:#1b1d98 ; padding:10px; border-radius:15px;border: 5px solid #090979;text-align: center;font-size:15px">
+                <button class="sell_button"style="padding:3px;Color:white;background-color:#66cc00;border: 1px solid green;font-size:15px">SELL</button>
+                <span style="margin-left:60px;Color:white">8</span>
+                <span style="margin-left:60px;Color:white">$1,680.00</span>
+                <span style="margin-left:60px;Color:white">GOLD</span>
+                <span style="margin-left:60px;Color:#66cc00;background-color:#050547">$63.60</span>
+                <button class="close_button" style="padding:3px;margin-left:40px;Color:white;background-color:red;border: 1px solid red;border-radius: 50px;font-size:15px">Close</button>
+              </div>
+                 <div id="1" style="background-color:#1b1d98 ; padding:10px; border-radius:15px;border: 5px solid #090979 ;text-align: center;font-size:15px">
+                <button class="sell_button"style="padding:3px;Color:white;background-color:#66cc00;border: 1px solid green;font-size:15px">SELL</button>
+                <span style="margin-left:60px;Color:white">8</span>
+                <span style="margin-left:60px;Color:white">$1,680.00</span>
+                <span style="margin-left:60px;Color:white">GOLD</span>
+                <span style="margin-left:60px;Color:#66cc00;background-color:#050547">$63.60</span>
+                <button class="close_button" style="padding:3px;margin-left:40px;Color:white;background-color:red;border: 1px solid red;border-radius: 50px;font-size:15px">Close</button>
+              </div>  <div id="1" style="background-color:#1b1d98 ; padding:10px; border-radius:15px;border: 5px solid #090979;text-align: center;font-size:15px">
+                <button class="sell_button"style="padding:3px;Color:white;background-color:#66cc00;border: 1px solid green;font-size:15px">SELL</button>
+                <span style="margin-left:60px;Color:white">8</span>
+                <span style="margin-left:60px;Color:white">$1,680.00</span>
+                <span style="margin-left:60px;Color:white">GOLD</span>
+                <span style="margin-left:60px;Color:#66cc00;background-color:#050547">$63.60</span>
+                <button class="close_button" style="padding:3px;margin-left:40px;Color:white;background-color:red;border: 1px solid red;border-radius: 50px;font-size:15px">Close</button>
+              </div>  <div id="1" style="background-color:#1b1d98 ; padding:10px; border-radius:15px;border: 5px solid #090979;text-align: center;font-size:15px">
+                <button class="sell_button"style="padding:3px;Color:white;background-color:#66cc00;border: 1px solid green;font-size:15px">SELL</button>
+                <span style="margin-left:60px;Color:white">8</span>
+                <span style="margin-left:60px;Color:white">$1,680.00</span>
+                <span style="margin-left:60px;Color:white">GOLD</span>
+                <span style="margin-left:60px;Color:#66cc00;background-color:#050547">$63.60</span>
+                <button class="close_button" style="padding:3px;margin-left:40px;Color:white;background-color:red;border: 1px solid red;border-radius: 50px;font-size:15px">Close</button>
+                </div>  <div id="1" style="background-color:#1b1d98 ; padding:10px; border-radius:15px;border: 5px solid #090979;text-align: center;font-size:15px">
+                <button class="sell_button"style="padding:3px;Color:white;background-color:#66cc00;border: 1px solid green;font-size:15px">SELL</button>
+                <span style="margin-left:60px;Color:white">8</span>
+                <span style="margin-left:60px;Color:white">$1,680.00</span>
+                <span style="margin-left:60px;Color:white">GOLD</span>
+                <span style="margin-left:60px;Color:#66cc00;background-color:#050547">$63.60</span>
+                <button class="close_button" style="padding:3px;margin-left:40px;Color:white;background-color:red;border: 1px solid red;border-radius: 50px;font-size:15px">Close</button>
+                </div>  <div id="1" style="background-color:#1b1d98 ; padding:10px; border-radius:15px;border: 5px solid #090979;text-align: center;font-size:15px">
+                <button class="sell_button"style="padding:3px;Color:white;background-color:#66cc00;border: 1px solid green;font-size:15px">SELL</button>
+                <span style="margin-left:60px;Color:white">8</span>
+                <span style="margin-left:60px;Color:white">$1,680.00</span>
+                <span style="margin-left:60px;Color:white">GOLD</span>
+                <span style="margin-left:60px;Color:#66cc00;background-color:#050547">$63.60</span>
+                <button class="close_button" style="padding:3px;margin-left:40px;Color:white;background-color:red;border: 1px solid red;border-radius: 50px;font-size:15px">Close</button>
+              </div>  <div id="1" style="background-color:#1b1d98 ; padding:10px; border-radius:15px;border: 5px solid #090979;text-align: center;font-size:15px">
+                <button class="sell_button"style="padding:3px;Color:white;background-color:#66cc00;border: 1px solid green;font-size:15px">SELL</button>
+                <span style="margin-left:60px;Color:white">8</span>
+                <span style="margin-left:60px;Color:white">$1,680.00</span>
+                <span style="margin-left:60px;Color:white">GOLD</span>
+                <span style="margin-left:60px;Color:#66cc00;background-color:#050547">$63.60</span>
+                <button class="close_button" style="padding:3px;margin-left:40px;Color:white;background-color:red;border: 1px solid red;border-radius: 50px;font-size:15px">Close</button>
+              </div>  <div id="1" style="background-color:#1b1d98 ; padding:10px; border-radius:15px;border: 5px solid #090979;text-align: center;font-size:15px">
+                <button class="sell_button"style="padding:3px;Color:white;background-color:#66cc00;border: 1px solid green;font-size:15px">SELL</button>
+                <span style="margin-left:60px;Color:white">8</span>
+                <span style="margin-left:60px;Color:white">$1,680.00</span>
+                <span style="margin-left:60px;Color:white">GOLD</span>
+                <span style="margin-left:60px;Color:#66cc00;background-color:#050547">$63.60</span>
+                <button class="close_button" style="padding:3px;margin-left:40px;Color:white;background-color:red;border: 1px solid red;border-radius: 50px;font-size:15px">Close</button>
+              </div>
+              
+            </div>
+
+        </div>
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------> 
+<!---------------------------------------------------------TIME------------------------------------------------------------------------------------------> 
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------->          
+        <div class="portfolio-item mediumb">
+          <div class="time" >
+              <div class="London" style="background-color: #181B54;color:white; padding:0px 10px 20px 10px">
+                <B style="font-size:20px;">London</B>
+                <div id="Date"></div>
+                <div id="txt" style="font-size:30px; text-align: center"></div>
+                
+                 <div style="font-size:15px;padding:5px 35px 5px 35px; background-color: #6236FF; width: 35px; display: inline-block;">8:00</div>
+              <div style="font-size:15px;padding: 5px 35px 5px 35px; background-color: #383fc7; display: inline-block;">17:00</div>
+              </div>
+              
+              
+              
+                <div class="New York" style="width:92%;background-color: #181B54;color:white; padding:0px 10px 20px 10px; margin-top: 5px">
+                <B style="font-size:20px;">New York</B>
+                <div id="Date"></div>
+                <div id="txt" style="font-size:30px; text-align: center"></div>
+                
+                 <div style="font-size:15px;padding:5px 35px 5px 35px; background-color: #6236FF; width: 35px; display: inline-block;">8:00</div>
+              <div style="font-size:15px;padding: 5px 35px 5px 35px; background-color: #383fc7; display: inline-block;">17:00</div>
+              </div>
+              
+              <div class="Tokyo" style="width:92%;background-color: #181B54;color:white; padding:0px 10px 20px 10px;margin-top: 5px">
+                <B style="font-size:20px;">Tokyo</B>
+                <div id="Date"></div>
+                <div id="txt" style="font-size:30px; text-align: center"></div>
+                
+                 <div style="font-size:15px;padding:5px 35px 5px 35px; background-color: #6236FF; width: 35px; display: inline-block;">8:00</div>
+              <div style="font-size:15px;padding: 5px 35px 5px 35px; background-color: #383fc7; display: inline-block;">17:00</div>
+              </div>
+              
+        
+                <div class="Sydney" style="width:92%;background-color: #181B54;color:white; padding:0px 10px 20px 10px;margin-top: 5px">
+                <B style="font-size:20px;">Sydney</B>
+                <div id="Date"></div>
+                <div id="txt" style="font-size:30px; text-align: center"></div>
+                
+                 <div style="font-size:15px;padding:5px 35px 5px 35px; background-color: #6236FF; width: 35px; display: inline-block;">8:00</div>
+              <div style="font-size:15px;padding: 5px 35px 5px 35px; background-color: #383fc7; display: inline-block;">17:00</div>
+              </div>
+              
+             
+
+            <script>
+            function startTime() {
+              var today = new Date();
+              var h = today.getHours();
+              var m = today.getMinutes();
+              var s = today.getSeconds();
+              m = checkTime(m);
+              s = checkTime(s);
+              document.getElementById('txt').innerHTML =
+              h + ":" + m + ":" + s;
+              var t = setTimeout(startTime, 500);
+            }
+            function checkTime(i) {
+              if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+              return i;
+            }
+            </script>
+
+        </div>
+
+      </div>    
+
+    </div>
+
+
+
+
+</body>
+</html> 
